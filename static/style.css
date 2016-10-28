@@ -1,0 +1,67 @@
+/*
+*     Palette          Hex     Materialize Class
+*   -----------------------------------------------
+*     Primary:         #3F51B5 indigo
+*       Hue (Lighter): #7986CB indigo lighten-2
+*       Hue (Darker):  #303F9F indigo darken-2
+*     Accent:          #4CAF50 green
+*       Hue (Darker):  #388E3C green darken-2
+*       Hue (Darkest): #1B5E20 green darken-4
+*     Black-ish:       #212121 grey lighten-5
+*     White-ish:       #FAFAFA grey darken-4
+*     Grey:            #BDBDBD grey lighten-1
+*/
+
+body {
+    background-color: #FAFAFA;
+}
+
+.margin {
+    margin: 45px auto;
+}
+
+.margin-sm {
+    margin: 20px auto;
+}
+
+.padding {
+    padding: 40px;
+}
+
+
+/* Styles for Login */
+.login.card-panel  {
+    padding: 0;
+}
+
+.login.card-panel .card-header {
+    height: 80px;
+    width: 100%;
+    position: relative;
+    background-color: #3F51B5;
+}
+
+.login.card-panel .card-header .card-title {
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    color: #fff;
+    font-size: 24px;
+}
+
+.login-wrapper {
+    margin-top: 15vh;
+}
+
+.login-wrapper .login {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    max-width: 95%;
+}
+
+.card-panel .card-content {
+    margin: 20px 0;
+    padding: 0 40px 40px;
+}
+/* End styles for login */
