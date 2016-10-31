@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, AuthProviders, AuthMethods  } from 'angularfire2';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBdgdpyGBHWA4_3Uq9Ig52gpyo9SagSAf0",
@@ -13,6 +13,10 @@ export const firebaseConfig = {
     databaseURL: "https://chas-itesm.firebaseio.com",
     storageBucket: "chas-itesm.appspot.com",
     messagingSenderId: "841229532620"
+  };
+export const firebaseAuthConfig = {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Redirect
   };
 
 
@@ -24,7 +28,7 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-	AngularFireModule.initializeApp(firebaseConfig)
+	AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

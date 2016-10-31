@@ -6,6 +6,11 @@ Google acc:
 user: chas.itesm@gmail.com
 pswd: %Dw4Ye_t4*!K2FTK
 
+firebase test acc:
+  user: root@root.root
+  pass: rootroot
+  UID: HIGkAArGdJabWI6sJowlcTjvI732
+
 # Materialize Color Classes
 When writing HTML and using Materialize components, add the following classes to give the proper colors:
 
