@@ -7,13 +7,16 @@
 *     Accent:          #4CAF50 green
 *       Hue (Darker):  #388E3C green darken-2
 *       Hue (Darkest): #1B5E20 green darken-4
+*       Hue (Lighter): #66BB6A green lighten-1
 *     Black-ish:       #212121 grey lighten-5
 *     White-ish:       #FAFAFA grey darken-4
 *     Grey:            #BDBDBD grey lighten-1
 */
 
+/* General Styles */
 body {
     background-color: #FAFAFA;
+    height: 100%;
 }
 
 .margin {
@@ -36,6 +39,221 @@ span.error.hidden {
     display: none;
 }
 
+/* End general styles */
+
+/* Header/menu styles */
+
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 64px;
+    background-color: #3F51B5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    z-index: 2;
+}
+
+.header-content {
+    padding: 0px 72px;
+    line-height: 64px;
+    font-size: 18px;
+    color: #fff;
+    padding-left: 312px;
+}
+
+.header-content .title {
+    float: left;
+}
+
+.header-content .user-info {
+    float: right;
+}
+
+.menu-toggle-button {
+    display: none;
+}
+
+.user-info span {
+    margin-left: 8px;
+}
+
+.main-nav {
+    z-index: 5;
+    width: 240px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    border-right: 1px solid rgba(20,20,20,0.14);
+    -webkit-transition: transform 0.3s;
+    -moz-transition: transform 0.3s;
+    transition: transform 0.3s;   
+}
+
+.main-nav .logo {
+    height: 64px;
+    border-bottom: 1px solid rgba(20,20,20,0.14);
+    padding: 8px;
+}
+
+.main-nav .logo h3 {
+    margin: 0;
+    color: #777;
+}
+
+.menu-header p {
+    color: #000;
+    font-weight: 700;
+    margin: 0;
+    font-size: 14.5px;
+    padding: 12px 0 12px 48px;    
+    line-height: 14.5px;
+    letter-spacing: 0.1px;
+    cursor: pointer;
+}
+
+.menu-dropdown {
+    overflow-y: hidden;
+    max-height: 0;
+    transition: max-height 0.3s;
+}
+
+.menu-item {
+    padding: 12px 24px 12px 64px;
+    font-size: 14.5px;
+    letter-spacing: 0.1px;
+    display: block;
+    line-height: 14.5px;
+    color: #000;
+}
+
+.menu-item:hover, .menu-header p:hover {
+    text-decoration: none;
+    background-color: #eee;
+}
+
+.menu-item.active, .menu-header.active p {
+    background-color: #66BB6A;
+    color: #FFF;
+}
+
+.menu-item:focus, .menu-header:focus p {
+    background-color: #f0f0f0;    
+}
+
+.menu .menu-header p, .menu .menu-header .menu-dropdown a {
+    position: relative;
+}
+
+.menu .menu-header .menu-dropdown .material-icons {
+    left: 32px;
+}
+
+.menu .material-icons {
+    position: absolute;
+    left: 16px;
+    top:  6px;
+}
+
+.content {
+    margin-left: 240px;
+    margin-top: 64px;
+    padding: 8px;
+}
+
+@media (max-width: 767px) {
+    button.inline-form {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    .pull-right-xs {
+        float: right;
+    }
+
+    .menu-header p {
+        padding: 12px 0 12px 24px;    
+        line-height: 14.5px;
+        letter-spacing: 0.1px;
+        cursor: pointer;
+    }
+
+    .menu-item {
+        padding: 12px 24px 12px 40px;
+    }
+    
+    .menu-toggle-button {
+        display: block;
+        cursor: pointer;
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        z-index: 6;
+        top: 9px;
+        left: 8px;
+        padding: 16px;
+    }
+    
+    .black-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.4);
+        z-index: 3;
+    }
+    
+    .menu-toggle-button .icon-bar {
+        background-color: #fff;
+        width: 22px;
+        height: 2px;
+        margin-bottom: 4px;
+    }
+
+    .main-nav {
+        transform: translate(-184px);
+        z-index: 1;
+    }
+    
+    .main-nav.open {
+        transform: translate(0);
+        z-index: 10;
+    }
+    
+    .header-content {
+        margin-left: 0px;
+        padding-right: 32px;
+        padding-left: 64px;
+    }
+
+    .content {
+        margin-left: 56px;
+    }    
+
+    .main-nav:not(.open) p, .main-nav:not(.open) a {
+        font-size: 0px;
+    }
+
+    .menu .material-icons {
+        left: initial;
+        right: 24px;
+    }
+
+    .menu .menu-header .menu-dropdown .material-icons {
+        left: initial;
+        right: 16px;
+    }
+}
+
+/* End header/menu styles */
 
 /* Styles for Login */
 .login .login-form {
