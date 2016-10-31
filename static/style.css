@@ -28,14 +28,26 @@ body {
     padding: 40px;
 }
 
+span.error {
+    color: #F44336;
+}
+
+span.error.hidden {
+    display: none;
+}
+
 
 /* Styles for Login */
+.login .login-form {
+     margin: 0 0 20px;
+}
+
 .login.card-panel  {
     padding: 0;
 }
 
 .login.card-panel .card-header {
-    height: 80px;
+    height: 88px;
     width: 100%;
     position: relative;
     background-color: #3F51B5;
@@ -47,6 +59,11 @@ body {
     left: 40px;
     color: #fff;
     font-size: 24px;
+}
+
+.login span.error {
+    position: relative;
+    top: -15px;
 }
 
 .login-wrapper {
@@ -64,4 +81,16 @@ body {
     margin: 20px 0;
     padding: 0 40px 40px;
 }
+
+
 /* End styles for login */
+
+
+/* Begin general media queries */
+@media (max-width: 767px) {
+    .sm-block {
+        clear: both;
+        float: none !important;
+        display: block;
+    }
+}
