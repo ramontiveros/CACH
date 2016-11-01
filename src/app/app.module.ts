@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 
 import { AngularFireModule, AuthProviders, AuthMethods  } from 'angularfire2';
 
+
+import { MaterializeModule } from 'angular2-materialize';
+import "materialize-css";
+
 export const firebaseConfig = {
     apiKey: "AIzaSyBdgdpyGBHWA4_3Uq9Ig52gpyo9SagSAf0",
     authDomain: "chas-itesm.firebaseapp.com",
@@ -28,7 +32,8 @@ export const firebaseAuthConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-	AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
+	AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+    MaterializeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
