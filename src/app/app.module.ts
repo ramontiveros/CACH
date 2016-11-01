@@ -9,7 +9,6 @@ import { AngularFireModule, AuthProviders, AuthMethods  } from 'angularfire2';
 
 
 import { MaterializeModule } from 'angular2-materialize';
-import "materialize-css";
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBdgdpyGBHWA4_3Uq9Ig52gpyo9SagSAf0",

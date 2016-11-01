@@ -6,6 +6,18 @@ body {
     height: 100%;
 }
 
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.spinner-indigo {
+    border-color: #3F51B5;
+}
+
 .margin {
     margin: 45px auto;
 }
