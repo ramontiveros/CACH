@@ -167,7 +167,7 @@ a:hover, a:focus {
     padding: 8px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 992px) {
     button.inline-form {
         margin-left: auto;
         margin-right: auto;
@@ -305,7 +305,7 @@ a:hover, a:focus {
 
 
 /* Begin general media queries */
-@media (max-width: 767px) {
+@media (max-width: 992px) {
     .sm-block {
         clear: both;
         float: none !important;
