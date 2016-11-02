@@ -9,7 +9,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class DashboardComponent {
   items: FirebaseListObservable<any[]>;
   constructor(af: AngularFire) {
-    this.items = af.database.list('/videos/0');
+    this.items = af.database.list('/videos/video1');
   }
 }
 

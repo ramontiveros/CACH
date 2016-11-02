@@ -1,0 +1,27 @@
+<div id="login" class="login-wrapper">
+  <div class="card-panel login">
+    <div class="card-header">
+      <span class="card-title">Iniciar Sesión</span>
+    </div>
+    <div class="card-content">
+      <div class="login-form">
+        <div class="input-field">
+          <input id="email" type="email" class="validate" [(ngModel)]="email">
+          <label for="email" data-error="Debes introducir un correo válido">Correo</label>
+        </div>
+        <div class="input-field">
+          <input id="pass" type="password" class="validate" [(ngModel)]="password">
+          <label for="pass">Constraseña</label>
+        </div>
+        <span class="error" [ngClass]="{'hidden': !formError}">{{errorMessage}}</span>
+        <div>
+          <input type="checkbox" id="remember" class="filled-in" />
+          <label for="remember">Recordarme</label>
+        </div>
+      </div>
+      <a href="#" class="left">Olvidé mi constraseña</a>
+      <a (click)="login()" materialize="button" [ngClass]="{'disabled': buttonDisabled}"  class="right waves-effect waves-light indigo btn sm-block" id="login-button">Acceder</a>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
