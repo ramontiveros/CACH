@@ -1,11 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
     template: '<router-outlet></router-outlet>'
 })
-export class AuthComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() { }
+export class AuthComponent {
+  constructor() {
+  }
 }

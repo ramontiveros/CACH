@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
-import {AngularFireAuth} from 'angularfire2';
+import { AngularFireAuth} from 'angularfire2';
 import { Observable } from "rxjs/Observable";
 import "rxjs/Rx";
 
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class LoginGuard implements CanActivate {
 
   constructor(private auth: AngularFireAuth, private router: Router) {}
 
@@ -15,11 +15,10 @@ export class AuthGuard implements CanActivate {
       console.log(route, state);
       if (auth) {
         console.log('authenticated');
-        return true;
+        this.router.navigateByUrl('/app');
+        return false;
       }
-      console.log('not authenticated');
-      this.router.navigateByUrl('/auth');
-      return false;
+      return true;
     }).first(); // this might not be necessary - ensure `first` is imported if you use it
   }
 }
