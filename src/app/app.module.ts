@@ -14,6 +14,8 @@ import { AuthService } from './auth.service';
 
 
 import { AngularFireModule, AuthProviders, AuthMethods  } from 'angularfire2';
+import {AuthGuard} from "./auth-guard.service";
+import {LoginGuard} from "./dobleLogin-guard.service";
 
 
 
@@ -40,13 +42,15 @@ export const firebaseAuthConfig = {
     FormsModule,
     HttpModule,
 	  AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
-    MaterializeModule,    
+    MaterializeModule,
     AppRoutingModule,
     AuthModule,
     MainModule
   ],
   providers: [
-      AuthService
+      AuthService,
+    AuthGuard,
+    LoginGuard
     ],
   bootstrap: [AppComponent]
 })

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login.component';
+import {LoginGuard} from "../dobleLogin-guard.service";
 
 const routes: Routes = [
   {
@@ -11,10 +12,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-      
+
       path: 'auth',
       component: AuthComponent,
-      children: [
+    canActivate: [LoginGuard],
+    children: [
         {
             path: '',
             component: LoginComponent
