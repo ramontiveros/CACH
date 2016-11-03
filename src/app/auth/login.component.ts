@@ -23,15 +23,12 @@ export class LoginComponent implements OnInit {
     }
 
     login() {    
-      console.log(this.email, this.password);
       this.buttonDisabled = true;
       this.formError = false;
       this.authService.login(this.email, this.password).then((d) => {
-          console.log("yay", d);
           this.router.navigate(['app']);
           this.buttonDisabled = false;
       }, (d) => {
-          console.error("nay", d);
           this.errorMessage = d.message;
           this.buttonDisabled = false;          
           this.formError = true;

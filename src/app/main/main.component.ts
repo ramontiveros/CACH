@@ -19,7 +19,13 @@ export class MainComponent implements OnInit {
 
     logout() {
       this.authService.logout();
-      this.router.navigate(['auth']);
+      Object.keys(localStorage)
+      .forEach(function(key){
+           if (/^firebase/.test(key)) {
+               localStorage.removeItem(key);
+           }
+       });
+       window.location.reload();
     }
 
     setActiveTeam(team: string) {

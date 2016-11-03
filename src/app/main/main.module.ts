@@ -2,6 +2,7 @@ import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
 import { MainRoutingModule } from './main-routing.module';
+import { MaterializeModule } from 'angular2-materialize';
 
 import { MainComponent }    from './main.component';
 
@@ -14,7 +15,8 @@ import { VideosListComponent } from './matches/videos-list.component';
   imports: [
     CommonModule,
     FormsModule,
-    MainRoutingModule
+    MainRoutingModule,
+    MaterializeModule
   ],
   declarations: [
     DashboardComponent,

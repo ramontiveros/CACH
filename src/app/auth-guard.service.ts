@@ -12,14 +12,11 @@ export class AuthGuard implements CanActivate {
 
   canActivate(route:ActivatedRouteSnapshot, state:RouterStateSnapshot):Observable<boolean>|boolean {
     return this.auth.map((auth) => {
-      console.log(route, state);
       if (auth) {
-        console.log('authenticated');
         return true;
       }
-      console.log('not authenticated');
       this.router.navigateByUrl('/auth');
       return false;
-    }).first(); // this might not be necessary - ensure `first` is imported if you use it
+    }).first();
   }
 }
