@@ -7,6 +7,7 @@ import { MainComponent }    from './main.component';
 
 import { DashboardComponent }    from './dashboard.component';
 import { VideoComponent }    from './matches/video.component';
+import { VideosListComponent } from './matches/videos-list.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { VideoComponent }    from './matches/video.component';
     DashboardComponent,
     MainComponent,
     VideoComponent, 
+    VideosListComponent,
   ],
   providers: []
 })

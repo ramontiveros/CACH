@@ -9,11 +9,14 @@
       {{ pageTitle }}
     </div>
     <div class="user-info">
-         <span class='dropdown-button btn' materialize="dropdown" data-activates='teamSelectDropdown'>Drop Me!</span>
+         <span class='dropdown-button' materialize="dropdown" data-activates='teamSelectDropdown'>{{ activeTeam }}<i class="material-icons right">arrow_drop_down</i></span>
          <ul id='teamSelectDropdown' class='dropdown-content'>
-            <li><a href="#!">one</a></li>
-            <li><a href="#!">two</a></li>
-            <li><a (click)="logout()">three</a></li>
+            <li><a (click)="setActiveTeam('Borregos-Tec')">Borregos-Tec</a></li>
+            <li><a (click)="setActiveTeam('Borrebots-SLP')">Borrebots-SLP</a></li>
+            <li><a (click)="setActiveTeam('miEquipo')">miEquipo</a></li>
+            <li class="divider"></li>
+            <li><a>Mi Perfil</a></li>
+            <li><a (click)="logout()">Cerrar Sesión</a></li>
           </ul>
     </div>
   </div>

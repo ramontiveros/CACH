@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main.component';
 import { DashboardComponent } from './dashboard.component';
 import { VideoComponent } from './matches/video.component';
+import { VideosListComponent } from './matches/videos-list.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,16 @@ const routes: Routes = [
         },
         {
           path: 'videos',
-          component: VideoComponent,
+          children: [
+            {
+              path: '',
+              component: VideosListComponent
+            },
+            {
+              path: ':id',
+              component: VideoComponent
+            }
+          ]
         }
       ]
   },

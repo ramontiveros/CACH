@@ -22,6 +22,8 @@ When writing HTML and using Materialize components, add the following classes to
      Accent:          #4CAF50 green
        Hue (Darker):  #388E3C green darken-2
        Hue (Darkest): #1B5E20 green darken-4
+*      Hue (Lighter): #66BB6A green lighten-1
+       Hue (Lightest):#b9f6ca green accent-1
      Black-ish:       #212121 grey lighten-5
      White-ish:       #FAFAFA grey darken-4
      Grey:            #BDBDBD grey lighten-1

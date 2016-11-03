@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>
+    Videos
+  </h1>
+  <table class="responsive-table highlight bordered">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Duración</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let video of videos | async" (click)="goToVideo(video.$key)">
+        <td>{{ video.title }}</td>
+        <td>{{ video.length }}</td>
+        <td>{{ video.date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
