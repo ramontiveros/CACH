@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import {toast} from "angular2-materialize";
 
 @Component({
   selector: 'content',
@@ -9,7 +8,6 @@ import {toast} from "angular2-materialize";
 })
 export class VideoComponent implements OnInit {
   ngOnInit() {
-    toast("woo!");
   }
 }
 

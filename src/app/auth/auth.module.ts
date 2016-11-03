@@ -5,7 +5,6 @@ import { AuthRoutingModule } from './auth-routing.module';
 
 import { LoginComponent }    from './login.component';
 import { AuthComponent }    from './auth.component';
-import { AuthService } from './auth.service';
 
 
 @NgModule({
@@ -19,7 +18,6 @@ import { AuthService } from './auth.service';
     AuthComponent,
   ],
   providers: [
-      AuthService
   ]
 })
 export class AuthModule {}

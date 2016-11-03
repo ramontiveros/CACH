@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 
 import { MainModule } from './main/main.module';
+import { AuthService } from './auth.service';
 
 
 import { AngularFireModule, AuthProviders, AuthMethods  } from 'angularfire2';
@@ -44,7 +45,9 @@ export const firebaseAuthConfig = {
     AuthModule,
     MainModule
   ],
-  providers: [],
+  providers: [
+      AuthService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
