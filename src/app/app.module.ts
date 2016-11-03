@@ -15,7 +15,7 @@ import { AuthService } from './auth.service';
 
 import { AngularFireModule, AuthProviders, AuthMethods  } from 'angularfire2';
 import {AuthGuard} from "./auth-guard.service";
-import {LoginGuard} from "./dobleLogin-guard.service";
+import {LoginGuard} from "./login-guard.service";
 
 
 

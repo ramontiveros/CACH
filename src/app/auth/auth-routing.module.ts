@@ -3,20 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login.component';
-import {LoginGuard} from "../dobleLogin-guard.service";
+import {LoginGuard} from "../login-guard.service";
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: '/auth',
-    pathMatch: 'full'
-  },
-  {
-
       path: 'auth',
       component: AuthComponent,
-    canActivate: [LoginGuard],
-    children: [
+      canActivate: [LoginGuard],
+      children: [
         {
             path: '',
             component: LoginComponent

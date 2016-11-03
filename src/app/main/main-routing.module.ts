@@ -7,31 +7,36 @@ import { VideoComponent } from './matches/video.component';
 import { VideosListComponent } from './matches/videos-list.component';
 
 const routes: Routes = [
+  
   {
-
-      path: 'app',
-      component: MainComponent,
+    path: '',
+    redirectTo: '/app',
+    pathMatch: 'full'
+  },
+  {
+    path: 'app',
     canActivate: [AuthGuard],
-      children: [
-        {
-            path: '',
-            component: DashboardComponent,
+    component: MainComponent,
+    children: [
+      {
+          path: '',
+          component: DashboardComponent,
 
-        },
-        {
-          path: 'videos',
-          children: [
-            {
-              path: '',
-              component: VideosListComponent
-            },
-            {
-              path: ':id',
-              component: VideoComponent
-            }
-          ]
-        }
-      ]
+      },
+      {
+        path: 'videos',
+        children: [
+          {
+            path: '',
+            component: VideosListComponent
+          },
+          {
+            path: ':id',
+            component: VideoComponent
+          }
+        ]
+      }
+    ]
   },
 ];
 
