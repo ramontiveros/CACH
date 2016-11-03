@@ -9,7 +9,6 @@ $(function () {
 $(document).on('click', '.menu-header > p', function () {
   var $this = $(this),
     $dropdown = $this.parent().find('.menu-dropdown');
-  console.log($this);
   if ($dropdown.hasClass('open')) {
     $dropdown.css('max-height', 0);
   } else {

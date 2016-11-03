@@ -6,10 +6,16 @@
       <div class="icon-bar"></div>
     </div>
     <div class="title">
-      Partidos
+      {{ pageTitle }}
     </div>
     <div class="user-info">
-      <span class="hidden-xs">Carlos Coach</span>
+         <span class='dropdown-button btn' materialize="dropdown" data-activates='teamSelectDropdown'>Drop Me!</span>
+         <ul id='teamSelectDropdown' class='dropdown-content'>
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">three</a></li>
+          </ul>
     </div>
   </div>
 </div>
@@ -21,26 +27,9 @@
     <div class="menu-header">
       <p><i class="material-icons">games</i>Partidos</p>
       <div class="menu-dropdown">
-        <a routerLink="/app" routerLinkActive="active" class="menu-item"><i class="material-icons">games</i>Partidos</a>
-        <a href="#" class="menu-item"><i class="material-icons">insert_chart</i>Estrategias</a>
+        <a routerLink="/app/videos" routerLinkActive="active" class="menu-item"><i class="material-icons">videocam</i>Videos</a>
       </div>
-    </div>
-    <div class="menu-header">
-      <p><i class="material-icons">list</i>Jugadores</p>
-      <div class="menu-dropdown">
-        <a routerLink="/login" routerLinkActive="active" class="menu-item"><i class="material-icons">pageview</i>Ver</a>
-        <a href="#" class="menu-item"><i class="material-icons">add</i>Agregar</a>
-        <a href="#" class="menu-item"><i class="material-icons">settings_voice</i>Inspirar</a>
-      </div>
-    </div>
-    <div class="menu-header">
-      <p><i class="material-icons">insert_chart</i>Estadísticas</p>
-      <div class="menu-dropdown">
-        <a href="#" class="menu-item"><i class="material-icons">insert_chart</i>Análisis Automático</a>
-        <a href="#" class="menu-item"><i class="material-icons">view_column</i>Comparaciones</a>
-        <a href="#" class="menu-item"><i class="material-icons">library_books</i>Revisiones</a>
-      </div>
-    </div>
+    </div>   
   </div>
 </div>
 <div class="content">

@@ -3,8 +3,11 @@ import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
 import { MainRoutingModule } from './main-routing.module';
 
-import { DashboardComponent }    from './dashboard.component';
 import { MainComponent }    from './main.component';
+
+import { DashboardComponent }    from './dashboard.component';
+import { VideoComponent }    from './matches/video.component';
+
 
 @NgModule({
   imports: [
@@ -15,6 +18,7 @@ import { MainComponent }    from './main.component';
   declarations: [
     DashboardComponent,
     MainComponent,
+    VideoComponent, 
   ],
   providers: []
 })

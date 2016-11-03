@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent } from './main.component';
 import { DashboardComponent } from './dashboard.component';
+import { VideoComponent } from './matches/video.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,12 @@ const routes: Routes = [
       children: [
         {
             path: '',
-            component: DashboardComponent
+            component: DashboardComponent,
+            
+        },
+        {
+          path: 'videos',
+          component: VideoComponent,
         }
       ]
   },

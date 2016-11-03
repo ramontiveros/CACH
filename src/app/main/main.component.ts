@@ -5,8 +5,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+    pageTitle: string;
+
     constructor() { }
 
-    ngOnInit() { }
+    ngOnInit() { 
+      this.pageTitle = "Dashboard";
+    }
+
 }
 
