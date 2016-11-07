@@ -17,6 +17,7 @@ export class VideosListComponent implements OnInit{
 
   ngOnInit() {
     this.team_id = this.userData.getActiveTeam();
+    console.log(this.team_id);
   }
 
   goToVideo(id) {

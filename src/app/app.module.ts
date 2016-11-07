@@ -16,6 +16,7 @@ import { AuthService } from './auth.service';
 import { AngularFireModule, AuthProviders, AuthMethods  } from 'angularfire2';
 import { AuthGuard } from "./auth-guard.service";
 import { LoginGuard } from "./login-guard.service";
+import {UserDataService} from "./main/user-data.service";
 
 
 
@@ -50,6 +51,7 @@ export const firebaseAuthConfig = {
   providers: [
       AuthService,
     AuthGuard,
+    UserDataService,
     LoginGuard
     ],
   bootstrap: [AppComponent]
