@@ -9,7 +9,7 @@ import { MainComponent }    from './main.component';
 import { DashboardComponent }    from './dashboard.component';
 import { VideoComponent }    from './matches/video.component';
 import { VideosListComponent } from './matches/videos-list.component';
-import {UserDataService} from "./user-data.service";
+import { UserDataService } from "./user-data.service";
 
 
 @NgModule({

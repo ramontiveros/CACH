@@ -11,10 +11,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let video of videos | async" (click)="goToVideo(video.$key)">
-        <td>{{ video.title }}</td>
-        <td>{{ video.length }}</td>
-        <td>{{ video.date }}</td>
+      <tr *ngFor="let video of videos._list" (click)="goToVideo(video.id)">
+        <td>{{ video.value.title }}</td>
+        <td>{{ video.value.length }}</td>
+        <td>{{ video.value.date }}</td>
       </tr>
     </tbody>
   </table>

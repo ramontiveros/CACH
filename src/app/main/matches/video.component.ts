@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-/*import { AngularFire, FirebaseObjectObservable } from 'angularfire2';*/
+import { FirebaseService, FirebaseArray } from 'ng2-firebase/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
@@ -9,10 +9,10 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./video.component.css']
 })
 export class VideoComponent implements OnInit {
-  /*
-  video: any;
+  video: any
+  videoService: any;
   videoUrl: any;
-  constructor(private af: AngularFire, 
+  constructor(private firebase: FirebaseService<any>, 
     private domSanitizer: DomSanitizer,
     private route: ActivatedRoute,
     private router: Router) {
@@ -21,12 +21,13 @@ export class VideoComponent implements OnInit {
         id = params['id']; 
        });
 
-      this.video = this.af.database.object("videos/" + id);
-      this.af.database.object("videos/" + id, { preserveSnapshot: true }).subscribe(snapshot => {
-        this.videoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(snapshot.val().video.replace("watch?v=", "v/"));
-      });
+      this.videoService = firebase.child("videos/" + id);
+      this.videoService.data.subscribe((d) => {
+          console.log(d);
+          this.video = d;
+          this.videoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(d.video.replace("watch?v=", "v/"));   
+      })
     }
-*/
   ngOnInit() {
     
   }

@@ -1,12 +1,12 @@
-<div class="container" *ngIf="videoUrl">
-  <h3>{{ (video | async)?.title }}</h3>
+<div class="container" *ngIf="video">
+  <h3>{{ video.title }}</h3>
   <div class="card">
     <div class="match-video">
       <iframe *ngIf="videoUrl" [src]="videoUrl" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="card-content">
       <span class="card-title">Observaciones</span>
-      <p *ngFor="let observation of video.observations | async">{{observation.$key + " " + observation.$value }}</p>
+      
     </div>
     <div class="card-action">
       <a>Nueva Observación</a>
@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<div class="loading small" *ngIf="!videoUrl">
+<div class="loading small" *ngIf="!video">
   <div class="loader">
     <div class="preloader-wrapper big active">
       <div class="spinner-layer spinner-indigo">

@@ -2,7 +2,8 @@
   This is the dashboard.
 </h1>
 <ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.$value}}
+  <p>Dumping videos:</p>
+  <li class="text" *ngFor="let video of videos | async">
+    {{video }}
   </li>
 </ul>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { FirebaseService } from 'ng2-firebase/core';
-/*import { AngularFire, FirebaseListObservable } from 'angularfire2';*/
+import { FirebaseService, FirebaseArray } from 'ng2-firebase/core';
 
 @Component({
   selector: 'content',
@@ -8,12 +7,9 @@ import { FirebaseService } from 'ng2-firebase/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  constructor(private firebase: FirebaseService<any>) { }
-  /*
-  items: FirebaseListObservable<any[]>;
-  constructor(af: AngularFire) {
-    this.items = af.database.list('/videos/video1');
-  }
-    */
+  videos: FirebaseArray<any>;
+  constructor(private firebase: FirebaseService<any>) {
+      this.videos = firebase.child<any>("videos").asArray();
+   }
 }
 
