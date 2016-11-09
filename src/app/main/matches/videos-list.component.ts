@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+/*import { AngularFire, FirebaseListObservable } from 'angularfire2';*/
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import {UserDataService} from "../user-data.service";
 
@@ -9,6 +9,7 @@ import {UserDataService} from "../user-data.service";
   styleUrls: ['./videos-list.component.css']
 })
 export class VideosListComponent implements OnInit{
+  /*
   team_id;
   videos: FirebaseListObservable<any[]>;
   constructor(public userData: UserDataService ,af: AngularFire, private router: Router) {
@@ -23,5 +24,9 @@ export class VideosListComponent implements OnInit{
   goToVideo(id) {
     this.router.navigate(["app/videos/" + id]);
   }
+  */
+  ngOnInit() {
+  }
+
 }
 

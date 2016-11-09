@@ -13,10 +13,10 @@ import { MainModule } from './main/main.module';
 import { AuthService } from './auth.service';
 
 
-import { AngularFireModule, AuthProviders, AuthMethods  } from 'angularfire2';
+import { FirebaseModule } from 'ng2-firebase/core';
 import { AuthGuard } from "./auth-guard.service";
 import { LoginGuard } from "./login-guard.service";
-import {UserDataService} from "./main/user-data.service";
+import { UserDataService } from "./main/user-data.service";
 
 
 
@@ -27,11 +27,13 @@ export const firebaseConfig = {
     databaseURL: "https://chas-itesm.firebaseio.com",
     storageBucket: "chas-itesm.appspot.com",
     messagingSenderId: "841229532620"
-  };
+};
+  /*
 export const firebaseAuthConfig = {
   provider: AuthProviders.Password,
   method: AuthMethods.Password
-  };
+};
+*/
 
 
 @NgModule({
@@ -42,7 +44,7 @@ export const firebaseAuthConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-	  AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+	  FirebaseModule.forRoot(firebaseConfig),
     AppRoutingModule,
     AuthModule,
     MainModule,
