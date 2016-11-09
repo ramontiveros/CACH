@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 export const firebaseConfig = {
     apiKey: "AIzaSyBdgdpyGBHWA4_3Uq9Ig52gpyo9SagSAf0",
     authDomain: "chas-itesm.firebaseapp.com",
-    url: "https://chas-itesm.firebaseio.com",
+    databaseURL: "https://chas-itesm.firebaseio.com",
     storageBucket: "chas-itesm.appspot.com",
     messagingSenderId: "841229532620"
   };
