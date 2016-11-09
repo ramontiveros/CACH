@@ -10,10 +10,10 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 
 import { MainModule } from './main/main.module';
-import { AuthService } from './auth.service';
 
 
 import { FirebaseModule } from 'ng2-firebase/core';
+import { AuthService } from './auth.service';
 import { AuthGuard } from "./auth-guard.service";
 import { LoginGuard } from "./login-guard.service";
 
@@ -27,12 +27,7 @@ export const firebaseConfig = {
     storageBucket: "chas-itesm.appspot.com",
     messagingSenderId: "841229532620"
 };
-  /*
-export const firebaseAuthConfig = {
-  provider: AuthProviders.Password,
-  method: AuthMethods.Password
-};
-*/
+console.log('app constructed');
 
 
 @NgModule({
