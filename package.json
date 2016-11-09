@@ -21,11 +21,11 @@
     "@angular/platform-browser-dynamic": "~2.1.0",
     "@angular/router": "~3.1.0",
     "angular2-materialize": "^6.0.0",
-    "angularfire2": "^2.0.0-beta.5",
     "core-js": "^2.4.1",
-    "firebase": "^3.5.2",
+    "firebase": "^3.6.0",
     "jquery": "^2.2.4",
     "materialize-css": "^0.97.8",
+    "ng2-firebase": "^1.0.0",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.23"
