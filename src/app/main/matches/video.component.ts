@@ -10,9 +10,9 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class VideoComponent implements OnInit {
   video: any
-  videoService: any;
+  videoService: FirebaseService<Video>;
   videoUrl: any;
-  constructor(private firebase: FirebaseService<any>, 
+  constructor(private firebase: FirebaseService<Video>, 
     private domSanitizer: DomSanitizer,
     private route: ActivatedRoute,
     private router: Router) {
@@ -20,17 +20,24 @@ export class VideoComponent implements OnInit {
       this.route.params.forEach((params: Params) => {
         id = params['id']; 
        });
-
-      this.videoService = firebase.child("videos/" + id);
+      this.videoService = firebase.child<Video>("videos/" + id);
       this.videoService.data.subscribe((d) => {
-          console.log(d);
           this.video = d;
           this.videoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(d.video.replace("watch?v=", "v/"));   
-      })
-    }
+      });
+  }
   ngOnInit() {
     
   }
   
+}
+
+export class Video {
+  date: string;
+  length: string;
+  observations: any;
+  test: string;
+  title: string;
+  video: string;  
 }
 
