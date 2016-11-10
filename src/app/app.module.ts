@@ -12,7 +12,7 @@ import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
 
 
-import { FirebaseModule } from 'ng2-firebase/core';
+import { FirebaseModule, FirebaseAuthService } from 'ng2-firebase/core';
 import { AuthService } from './auth.service';
 import { AuthGuard } from "./auth-guard.service";
 import { LoginGuard } from "./login-guard.service";
@@ -27,7 +27,6 @@ export const firebaseConfig = {
     storageBucket: "chas-itesm.appspot.com",
     messagingSenderId: "841229532620"
 };
-console.log('app constructed');
 
 
 @NgModule({
@@ -45,9 +44,10 @@ console.log('app constructed');
     MaterializeModule,
   ],
   providers: [
-      AuthService,
-    AuthGuard,
-    LoginGuard
+     FirebaseAuthService,
+     AuthService,
+     AuthGuard,
+     LoginGuard,
     ],
   bootstrap: [AppComponent]
 })

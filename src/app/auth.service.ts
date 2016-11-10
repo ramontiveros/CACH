@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import  {FirebaseAuthService} from "ng2-firebase/core"
+import  { FirebaseService, FirebaseAuthService } from "ng2-firebase/core"
 
 @Injectable()
 export class AuthService {
-
-  constructor (public af: FirebaseAuthService<any>){  //  ESTA LINEA CRASHEA
-    console.log("constructed entry");
+  auth: FirebaseAuthService<any>;
+  constructor (private af: FirebaseService<any>) {
+    this.auth = new FirebaseAuthService<any>();
   }
 
   login(email, pswd){
