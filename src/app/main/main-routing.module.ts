@@ -4,6 +4,7 @@ import { AuthGuard} from '../auth-guard.service';
 import { MainComponent } from './main.component';
 import { DashboardComponent } from './dashboard.component';
 import { VideoComponent } from './matches/video.component';
+import { VideoCreateComponent } from './matches/video-create.component';
 import { VideosListComponent } from './matches/videos-list.component';
 
 const routes: Routes = [
@@ -31,7 +32,11 @@ const routes: Routes = [
             component: VideosListComponent
           },
           {
-            path: ':id',
+            path: 'create',
+            component: VideoCreateComponent
+          },
+          {
+            path: 'view/:id',
             component: VideoComponent
           }
         ]

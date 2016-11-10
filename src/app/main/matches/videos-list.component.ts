@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService, FirebaseArray } from 'ng2-firebase/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserDataService } from "../user-data.service";
+import { Video } from './video.component';
 
 @Component({
   selector: 'content',
@@ -10,9 +11,9 @@ import { UserDataService } from "../user-data.service";
 })
 export class VideosListComponent implements OnInit {
   team_id;
-  videos: FirebaseArray<any[]>;
-  constructor(public userData: UserDataService, private firebase: FirebaseService<any>, private router: Router) {
-    this.videos = firebase.child<any>("videos").asArray();
+  videos: FirebaseArray<Video>;
+  constructor(public userData: UserDataService, private firebase: FirebaseService<Video>, private router: Router) {
+    this.videos = firebase.child<Video>("videos").asArray();
     console.log(this.videos);
   }
 
@@ -22,7 +23,7 @@ export class VideosListComponent implements OnInit {
   }
 
   goToVideo(id) {
-    this.router.navigate(["app/videos/" + id]);
+    this.router.navigate(["app/videos/view/" + id]);
   }
 }
 

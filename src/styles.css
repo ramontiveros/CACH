@@ -42,6 +42,20 @@ span.error.hidden {
     display: none;
 }
 
+.picker__date-display, .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected  {
+    background-color: #4CAF50;
+}
+
+.picker__weekday-display {
+    background-color: #388E3C;
+}
+
+.picker__close, .picker__today, .picker__day.picker__day--today {
+    color: #4CAF50;
+}
+
+
+
 @media (max-width: 992px) {
     .sm-block {
         clear: both;

@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>
+    Subir Video
+  </h1>
+  <form materialize #videoForm="ngForm" (ngSubmit)="onSubmit(videoForm.value)">
+    <div class="row">
+      <div class="col m6 s12">
+        <div class="input-field">
+          <label for="title">Título</label>
+          <input type="text" id="title" name="title" ngModel>
+        </div>
+      </div>
+      <div class="col m6 s12">
+        <div class="input-field">
+          <label for="date">Fecha</label>
+          <input materialize="pickadate" type="date" id="date" name="date" class="datepicker" ngModel>
+        </div>
+      </div>
+    </div>
+    <div class="file-field input-field">
+      <div class="btn green">
+        <span>Video</span>
+        <input type="file" id="videoFile" (change)="readFile($event)">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Selecciona un video" id="video" name="video" ngModel>
+      </div>
+    </div>
+    <button class="right waves-effect waves-light indigo btn sm-block">Guardar</button>
+  </form>
+</div>

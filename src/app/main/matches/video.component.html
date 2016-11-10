@@ -2,11 +2,13 @@
   <h3>{{ video.title }}</h3>
   <div class="card">
     <div class="match-video">
-      <iframe *ngIf="videoUrl" [src]="videoUrl" frameborder="0" allowfullscreen></iframe>
+      <video [src]="videoUrl" controls>
+        Tu navegador no soporta reproducción de videos.
+        <a [href]="videoUrl">Descarga el video para verlo con tu reproductor preferido.</a>
+      </video>
     </div>
     <div class="card-content">
       <span class="card-title">Observaciones</span>
-      
     </div>
     <div class="card-action">
       <a>Nueva Observación</a>
