@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
 export class MainComponent implements OnInit {
     pageTitle: string;
     activeTeam: string;
-/*
+
     constructor(private authService: AuthService, private router: Router) {}
-*/
-    ngOnInit() { 
+
+    ngOnInit() {
       this.pageTitle = "Dashboard";
       this.activeTeam = "Borregos-Tec";
     }
-/*
+
     logout() {
       this.authService.logout();
       Object.keys(localStorage)
@@ -31,7 +31,7 @@ export class MainComponent implements OnInit {
     setActiveTeam(team: string) {
       this.activeTeam = team;
     }
-    */
+
 
 }
 

@@ -1,26 +1,31 @@
 import {Injectable} from '@angular/core';
 import {CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
-/*import { AngularFireAuth} from 'angularfire2';*/
-import { Observable } from "rxjs/Observable";
 import "rxjs/Rx";
+import 'rxjs/add/operator/take';
 
+import { AuthService } from './auth.service';
+import {Observable} from "rxjs";
+
+declare var firebase;
 
 @Injectable()
 export class LoginGuard implements CanActivate {
-/*
-  constructor(private auth: AngularFireAuth, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  canActivate(route:ActivatedRouteSnapshot, state:RouterStateSnapshot):Observable<boolean>|boolean {
-    return this.auth.map((auth) => {
-      if (auth) {
-        this.router.navigateByUrl('/app');
+  canActivate(): Observable<any> {
+    let component = this;
+    return firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log("user");
+        component.router.navigateByUrl('/app');
         return false;
+      } else {
+        console.log("no");
+        return true;
       }
-      return true;
-    }).first();
+    });
+
+
   }
-  */
-  canActivate() {
-    return true;
-  }
+
 }

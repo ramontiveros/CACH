@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     login() {
       this.buttonDisabled = true;
       this.formError = false;
-      /*
+
       this.authService.login(this.email, this.password).then((d) => {
           this.router.navigate(['app']);
           this.buttonDisabled = false;
@@ -33,6 +33,6 @@ export class LoginComponent implements OnInit {
           this.buttonDisabled = false;
           this.formError = true;
       });
-      */
+
     }
 }
