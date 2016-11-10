@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
-/*import { AngularFire } from 'angularfire2';*/
+import  {FirebaseAuthService} from "ng2-firebase/core"
 
 @Injectable()
 export class AuthService {
-  /*constructor(public af: AngularFire) {}
 
-  login(email, password) {
-    return this.af.auth.login({ email: email, password: password });
+  constructor (public af: FirebaseAuthService<any>){  //  ESTA LINEA CRASHEA
+    console.log("constructed entry");
   }
 
-  logout() {
-    return this.af.auth.logout();
+  login(email, pswd){
+    return true;
   }
-  */
-
 }

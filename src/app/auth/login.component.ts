@@ -17,12 +17,12 @@ export class LoginComponent implements OnInit {
 
     constructor(private authService: AuthService, private router: Router) {}
 
-    ngOnInit() { 
+    ngOnInit() {
         this.buttonDisabled = false;
         this.formError = false;
     }
 
-    login() {    
+    login() {
       this.buttonDisabled = true;
       this.formError = false;
       /*
@@ -31,9 +31,9 @@ export class LoginComponent implements OnInit {
           this.buttonDisabled = false;
       }, (d) => {
           this.errorMessage = d.message;
-          this.buttonDisabled = false;          
+          this.buttonDisabled = false;
           this.formError = true;
       });
       */
-    }    
+    }
 }
