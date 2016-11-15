@@ -15,6 +15,15 @@ export class AuthService {
     return  this.auth.authWithPassword({email: email, password: pswd});
   }
 
+  isLogged(){
+    for (let key  in localStorage ) {
+      if (key.startsWith("firebase:authUser:")){
+        return true;
+      }
+    }
+    return false;
+  }
+
 
   logout(){
     firebase.auth().signOut().then(function() {

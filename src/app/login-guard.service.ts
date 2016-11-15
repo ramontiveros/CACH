@@ -12,6 +12,19 @@ declare var firebase;
 export class LoginGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
+
+  canActivate(): boolean {
+    let cookies = this.authService.isLogged();
+
+    if (cookies ){
+      this.router.navigateByUrl('/app');
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+  /*
   canActivate(): Observable<any> {
     let component = this;
     return firebase.auth().onAuthStateChanged(function(user) {
@@ -27,5 +40,6 @@ export class LoginGuard implements CanActivate {
 
 
   }
+  */
 
 }

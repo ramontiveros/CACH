@@ -11,7 +11,19 @@ export class AuthGuard implements CanActivate {
 
   constructor(private authService: AuthService, private router: Router) {}
 
+  canActivate(): boolean {
+    let cookies = this.authService.isLogged();
 
+    if (cookies ){
+      return true;
+    }
+    else{
+      this.router.navigateByUrl('/auth');
+      return false;
+    }
+  }
+
+/*
   canActivate(): Observable<any> {
     let component = this;
     return firebase.auth().onAuthStateChanged(function(user) {
@@ -28,4 +40,5 @@ export class AuthGuard implements CanActivate {
 
 
   }
+  */
 }
