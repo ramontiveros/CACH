@@ -11,10 +11,10 @@ declare var firebase;
   styleUrls: ['./video.component.css']
 })
 export class VideoComponent implements OnInit {
-  video: any
+  video: any;
   videoService: FirebaseService<Video>;
   videoUrl: any;
-  constructor(private af: FirebaseService<Video>, 
+  constructor(private af: FirebaseService<Video>,
     private domSanitizer: DomSanitizer,
     private route: ActivatedRoute,
     private router: Router) {
@@ -22,9 +22,9 @@ export class VideoComponent implements OnInit {
 
       //get the video id from the URL
       this.route.params.forEach((params: Params) => {
-        id = params['id']; 
+        id = params['id'];
        });
-      
+
       // obtain the references
       this.videoService = af.child<Video>("videos/" + id);
       videoRef = firebase.storage().ref().child("videos/" + id + ".mp4");
@@ -32,7 +32,7 @@ export class VideoComponent implements OnInit {
       //load the video from the global firebase object
       //component var is used since the videoRef exists outside of this context
       videoRef.getDownloadURL().then(function(url) {
-        component.videoUrl = component.domSanitizer.bypassSecurityTrustResourceUrl(url);   
+        component.videoUrl = component.domSanitizer.bypassSecurityTrustResourceUrl(url);
       }).catch(function(error) {
         console.error("Error getting video URL!", error);
       });
@@ -40,13 +40,13 @@ export class VideoComponent implements OnInit {
       //Subscribe to the video data
       this.videoService.data.subscribe((d) => {
           this.video = d;
-          
+
       });
   }
   ngOnInit() {
-    
+
   }
-  
+
 }
 
 export class Video {
@@ -55,6 +55,6 @@ export class Video {
   observations: any;
   test: string;
   title: string;
-  video: string;  
+  video: string;
 }
 
