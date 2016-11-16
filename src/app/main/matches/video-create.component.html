@@ -26,6 +26,13 @@
         <input class="file-path validate" type="text" placeholder="Selecciona un video" id="video" name="video" ngModel>
       </div>
     </div>
-    <button class="right waves-effect waves-light indigo btn sm-block">Guardar</button>
+    <button [ngClass]="{'disabled': buttonDisabled}" class="right waves-effect waves-light indigo btn sm-block">Guardar</button>
+
+    <div class = "margin-lg">
+      <div class="progress " *ngIf="uploading">
+        <div class="determinate green lighten-1"  [style.width]="barProgress + '%'" ></div>
+      </div>
+    </div>
+
   </form>
 </div>

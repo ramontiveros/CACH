@@ -26,6 +26,10 @@ body {
     margin: 45px auto;
 }
 
+.margin-lg {
+  margin: 90px auto;
+}
+
 .margin-sm {
     margin: 20px auto;
 }
