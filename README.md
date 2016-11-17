@@ -17,6 +17,7 @@ When writing HTML and using Materialize components, add the following classes to
      Palette          Hex     Materialize Class
    -----------------------------------------------
      Primary:         #3F51B5 indigo
+       Hue (Lightest):#c5cae9 indigo lighten-3
        Hue (Lighter): #7986CB indigo lighten-2
        Hue (Darker):  #303F9F indigo darken-2
      Accent:          #4CAF50 green

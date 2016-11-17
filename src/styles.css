@@ -22,6 +22,10 @@ body {
     border-color: #3F51B5;
 }
 
+table.highlight tbody tr:hover {
+  background-color: #c5cae9;
+}
+
 .margin {
     margin: 45px auto;
 }
