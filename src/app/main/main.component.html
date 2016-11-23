@@ -11,9 +11,8 @@
     <div class="user-info">
          <span class='dropdown-button' materialize="dropdown" data-activates='teamSelectDropdown'>{{ activeTeam }}<i class="material-icons right">arrow_drop_down</i></span>
          <ul id='teamSelectDropdown' class='dropdown-content'>
-            <li><a (click)="setActiveTeam('Borregos-Tec')">Borregos-Tec</a></li>
-            <li><a (click)="setActiveTeam('Borrebots-SLP')">Borrebots-SLP</a></li>
-            <li><a (click)="setActiveTeam('miEquipo')">miEquipo</a></li>
+            <li *ngFor="let team of userData.getTeams(userData.getUserUid())"><a (click)="userData.setActiveTeam(team)">{{team}}</a></li>
+
             <li class="divider"></li>
             <li><a>Mi Perfil</a></li>
             <li><a (click)="logout()">Cerrar Sesión</a></li>
@@ -31,7 +30,7 @@
       <div class="menu-dropdown">
         <a routerLink="/app/videos" routerLinkActive="active" class="menu-item"><i class="material-icons">videocam</i>Videos</a>
       </div>
-    </div>   
+    </div>
   </div>
 </div>
 <div class="content">

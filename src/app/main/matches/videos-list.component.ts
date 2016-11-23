@@ -10,20 +10,53 @@ import { Video } from './video.component';
   styleUrls: ['./videos-list.component.css']
 })
 export class VideosListComponent implements OnInit {
-  team_id;
+  team_id  ;
   videos: FirebaseArray<Video>;
+  checkedItems: Array<string>;
   constructor(public userData: UserDataService, private firebase: FirebaseService<Video>, private router: Router) {
     this.videos = firebase.child<Video>("videos").asArray();
-    console.log(this.videos);
+    this.checkedItems = [];
   }
 
   ngOnInit() {
-    this.team_id = this.userData.getActiveTeam();
-    console.log(this.team_id);
+
   }
 
   goToVideo(id) {
     this.router.navigate(["app/videos/view/" + id]);
   }
+
+  checkBox(id){
+
+      let myIndex = this.checkedItems.indexOf(id);
+
+      if (myIndex > -1){
+        this.checkedItems.splice(myIndex, 1);
+      }
+      else {
+        this.checkedItems.push(id);
+      }
+
+
+
+
+      console.log(this.checkedItems);
+  }
+
+
+  deleteVideo (){
+      for (let i = 0; i < this.checkedItems.length; i ++){
+        let id = this.checkedItems[i];
+        let newRef = firebase.database().ref().child('videos/' + id);
+        newRef.remove();
+      }
+      this.checkedItems = [];
+
+  }
+
+  modifyVideo(){
+    //TODO
+  }
+
 }
 

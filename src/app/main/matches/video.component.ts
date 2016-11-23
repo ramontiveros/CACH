@@ -55,6 +55,5 @@ export class Video {
   observations: any;
   test: string;
   title: string;
-  video: string;
 }
 

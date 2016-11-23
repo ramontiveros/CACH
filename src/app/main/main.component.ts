@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import {UserDataService} from "./user-data.service";
 
 @Component({
   templateUrl: './main.component.html',
@@ -10,11 +11,11 @@ export class MainComponent implements OnInit {
     pageTitle: string;
     activeTeam: string;
 
-    constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private userData: UserDataService) {}
 
     ngOnInit() {
       this.pageTitle = "Dashboard";
-      this.activeTeam = "Borregos-Tec";
+      this.activeTeam = this.userData.getActiveTeam();
     }
 
     logout() {
@@ -29,7 +30,7 @@ export class MainComponent implements OnInit {
     }
 
     setActiveTeam(team: string) {
-      this.activeTeam = team;
+      this.userData.setActiveTeam(team);
     }
 
 
